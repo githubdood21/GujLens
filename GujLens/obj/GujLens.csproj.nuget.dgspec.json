@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\GujLens.csproj": {}
+    "C:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\GujLens.csproj": {}
   },
   "projects": {
-    "c:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\GujLens.csproj": {
+    "C:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\GujLens.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\GujLens.csproj",
+        "projectUniqueName": "C:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\GujLens.csproj",
         "projectName": "GujLens",
-        "projectPath": "c:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\GujLens.csproj",
+        "projectPath": "C:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\GujLens.csproj",
         "packagesPath": "C:\\Users\\prote\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\obj\\",
+        "outputPath": "C:\\Users\\prote\\Downloads\\dev\\GujLens\\GujLens\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\prote\\AppData\\Roaming\\NuGet\\NuGet.Config"
@@ -64,10 +64,6 @@
               "target": "Package",
               "version": "[8.2.1, )"
             },
-            "Hardcodet.NotifyIcon.Wpf": {
-              "target": "Package",
-              "version": "[1.1.0, )"
-            },
             "Microsoft.Extensions.Configuration.Binder": {
               "target": "Package",
               "version": "[9.0.0, )"
@@ -77,6 +73,14 @@
               "version": "[9.0.0, )"
             },
             "Microsoft.Extensions.DependencyInjection": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Logging": {
+              "target": "Package",
+              "version": "[9.0.0, )"
+            },
+            "Microsoft.Extensions.Logging.Console": {
               "target": "Package",
               "version": "[9.0.0, )"
             },

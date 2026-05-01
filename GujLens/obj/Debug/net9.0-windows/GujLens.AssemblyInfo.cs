@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("GujLens")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+078b723ef0d9ed8d01dc40de43cafb1b6f0cf780")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+377fa40b1cafe37bf5c17e83b83176ce1f69f321")]
 [assembly: System.Reflection.AssemblyProductAttribute("GujLens")]
 [assembly: System.Reflection.AssemblyTitleAttribute("GujLens")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

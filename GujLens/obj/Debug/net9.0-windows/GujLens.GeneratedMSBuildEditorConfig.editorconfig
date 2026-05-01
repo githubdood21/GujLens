@@ -15,15 +15,15 @@ build_property.PlatformNeutralAssembly =
 build_property.EnforceExtendedAnalyzerRules = 
 build_property._SupportedPlatformList = Linux,macOS,Windows
 build_property.RootNamespace = GujLens
-build_property.ProjectDir = c:\Users\prote\Downloads\dev\GujLens\GujLens\
+build_property.ProjectDir = C:\Users\prote\Downloads\dev\GujLens\GujLens\
 build_property.EnableComHosting = 
 build_property.EnableGeneratedComInterfaceComImportInterop = 
 build_property.CsWinRTUseWindowsUIXamlProjections = false
 build_property.EffectiveAnalysisLevelStyle = 9.0
 build_property.EnableCodeStyleSeverity = 
 
-[c:/Users/prote/Downloads/dev/GujLens/GujLens/App.axaml]
+[C:/Users/prote/Downloads/dev/GujLens/GujLens/App.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml
 
-[c:/Users/prote/Downloads/dev/GujLens/GujLens/Views/MainWindow.axaml]
+[C:/Users/prote/Downloads/dev/GujLens/GujLens/Views/MainWindow.axaml]
 build_metadata.AdditionalFiles.SourceItemGroup = AvaloniaXaml

@@ -1,7 +1,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using GujLens.Models;
+using GujLens.Services;
 using System.Collections.ObjectModel;
+using System.Windows.Forms;
 
 namespace GujLens.ViewModels;
 
@@ -10,6 +12,8 @@ namespace GujLens.ViewModels;
 /// </summary>
 public partial class MainViewModel : ObservableObject
 {
+    private readonly ITrayIconService _trayIcon;
+
     [ObservableProperty]
     private string _appName = "GujLens";
 
@@ -34,8 +38,22 @@ public partial class MainViewModel : ObservableObject
     [ObservableProperty]
     private string _targetLanguage = "en";
 
-    public MainViewModel()
+    [ObservableProperty]
+    private bool _isWindowVisible;
+
+    public MainViewModel(ITrayIconService trayIcon)
     {
+        _trayIcon = trayIcon;
+
+        // Wire up tray icon menu item clicks
+        _trayIcon.MenuItemClicked += OnMenuItemClicked;
+        _trayIcon.IconDoubleClicked += OnIconDoubleClicked;
+    }
+
+    ~MainViewModel()
+    {
+        _trayIcon.MenuItemClicked -= OnMenuItemClicked;
+        _trayIcon.IconDoubleClicked -= OnIconDoubleClicked;
     }
 
     [RelayCommand]
@@ -60,5 +78,91 @@ public partial class MainViewModel : ObservableObject
         StatusText = $"Translating to {TargetLanguage}...";
         // Translation will be done by the service
         StatusText = "Translation complete (placeholder)";
+    }
+
+    [RelayCommand]
+    private void ShowWindow()
+    {
+        IsWindowVisible = true;
+        StatusText = "Window shown";
+    }
+
+    [RelayCommand]
+    private void HideWindow()
+    {
+        IsWindowVisible = false;
+        StatusText = "Minimized to tray";
+    }
+
+    [RelayCommand]
+    private void CaptureScreenshot()
+    {
+        StatusText = "Capturing screenshot...";
+        // Screenshot capture will be implemented later
+        StatusText = "Screenshot captured (placeholder)";
+    }
+
+    [RelayCommand]
+    private void OpenSettings()
+    {
+        StatusText = "Settings opened (placeholder)";
+    }
+
+    [RelayCommand]
+    private void Quit()
+    {
+        _trayIcon.HideIcon();
+        // Application quit will be handled by App
+        StatusText = "Quitting...";
+    }
+
+    private void OnMenuItemClicked(object? sender, MenuItemClickedEventArgs e)
+    {
+        StatusText = $"Menu item clicked: {e.MenuItemName}";
+
+        switch (e.MenuItemName)
+        {
+            case "Capture":
+                CaptureScreenshotCommand.Execute(null);
+                break;
+            case "Open":
+                ShowWindowCommand.Execute(null);
+                break;
+            case "Settings":
+                OpenSettingsCommand.Execute(null);
+                break;
+            case "Quit":
+                QuitCommand.Execute(null);
+                break;
+        }
+    }
+
+    private void OnIconDoubleClicked(object? sender, EventArgs e)
+    {
+        ShowWindowCommand.Execute(null);
+    }
+
+    /// <summary>
+    /// Handles menu item clicks from the tray icon context menu.
+    /// </summary>
+    public void HandleMenuItem(string menuItemName)
+    {
+        StatusText = $"Menu item clicked: {menuItemName}";
+
+        switch (menuItemName)
+        {
+            case "Capture":
+                CaptureScreenshotCommand.Execute(null);
+                break;
+            case "Open":
+                ShowWindowCommand.Execute(null);
+                break;
+            case "Settings":
+                OpenSettingsCommand.Execute(null);
+                break;
+            case "Quit":
+                QuitCommand.Execute(null);
+                break;
+        }
     }
 }

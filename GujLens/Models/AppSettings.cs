@@ -16,9 +16,14 @@ public class AppSettings
     public string? GoogleTranslationApiKey { get; set; }
 
     /// <summary>
-    /// Target language for translation (ISO 639-1 code, e.g., "en", "de", "es").
+    /// Source text language (BCP-47 tag, e.g., "en-US", "de-DE", "ru-RU", "ja-JP").
     /// </summary>
-    public string? TargetLanguage { get; set; }
+    public string? SourceLanguage { get; set; } = "en-US";
+
+    /// <summary>
+    /// Target language for translation (BCP-47 tag, e.g., "en-US", "de-DE", "ru-RU", "ja-JP").
+    /// </summary>
+    public string? TargetLanguage { get; set; } = "en-US";
 
     /// <summary>
     /// Default save directory for screenshots.
